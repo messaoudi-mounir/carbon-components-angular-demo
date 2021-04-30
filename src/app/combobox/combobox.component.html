@@ -1,0 +1,35 @@
+<div ibmGrid class="demo-list">
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<ibm-combo-box label="Full Name" helperText="trigger search by pressing enter key"
+				placeholder="Please select user name" [items]="items" [(ngModel)]="nameModel"
+				(selected)="onSelected(selectedItem)" (keydown.enter)="onEnter($event)">
+				<ibm-dropdown-list></ibm-dropdown-list>
+			</ibm-combo-box>
+			<p>model: {{nameModel | json}}</p>
+			<button ibmButton="primary" (click)="clearupName()">Clear Selection</button>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<h4>load remote data</h4>
+			<p>
+				Our combobox control loads remote data with http requets. So maybe you need to wait a little bit longer
+				to see the search results.
+			</p>
+		</div>
+	</div>
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<ibm-combo-box [items]="jsSkills" size="lg" label="JS Skills"
+				placeholder="Please choose your favorite js skill" [(ngModel)]="jsModel">
+				<ibm-dropdown-list></ibm-dropdown-list>
+			</ibm-combo-box>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<h4>with ngModel</h4>
+			<p>
+				
+			</p>
+		</div>
+	</div>
+</div>
+<!-- <ibm-loading [overlay]="true"></ibm-loading> -->

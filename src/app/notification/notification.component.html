@@ -1,0 +1,20 @@
+<div ibmGrid class="demo-list">
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<ibm-notification [notificationObj]="notificationConfig"></ibm-notification>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>toggle content of notification</h4>
+      <button (click)="setWarning()">warning</button>
+      <button (click)="setSuccess()">success</button>
+		</div>
+	</div>
+  <div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}" style="background-color:#eee;">
+			<ibm-notification [notificationObj]="notificationConfig" style="width:calc(100% + 2rem);margin-left:-1rem;"></ibm-notification>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>fullwidth notification</h4>
+		</div>
+	</div>
+</div>

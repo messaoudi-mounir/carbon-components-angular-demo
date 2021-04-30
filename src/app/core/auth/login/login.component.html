@@ -1,0 +1,49 @@
+<div class="columns is-mobile">
+	<div class="column is-half is-offset-one-quarter">
+		<div class="box" style="margin:50px;">
+			<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+				<div class="field">
+					<label class="label">Username</label>
+					<div class="control has-icons-right">
+						<input formControlName="username" [ngClass]="{ 'is-success': isSubmitted && !f.username.errors, 'is-danger': isSubmitted && f.username.errors }" class="input" type="text" placeholder="Username" value="bulma">
+						<span class="icon is-small is-right">
+        <i [ngClass]="{ 'fa-check': isSubmitted && !f.username.errors, 'fa-exclamation-triangle': isSubmitted && f.username.errors }" class="fas"></i>
+      </span>
+					</div>
+					<p *ngIf="isSubmitted && !f.username.errors" class="help is-success">This username is
+						available</p>
+					<ng-container *ngIf="isSubmitted && f.username.errors">
+						<p *ngIf="f.username.errors.required" class="help is-danger">Username is required</p>
+					</ng-container>
+				</div>
+
+				<div class="field">
+					<label class="label">Password</label>
+					<div class="control has-icons-right">
+						<input formControlName="password" [ngClass]="{ 'is-success': isSubmitted && !f.password.errors, 'is-danger': isSubmitted && f.password.errors }" class="input" type="text" placeholder="Password" value="bulma">
+						<span class="icon is-small is-right">
+        <i [ngClass]="{ 'fa-check': isSubmitted && !f.password.errors, 'fa-exclamation-triangle': isSubmitted && f.password.errors }" class="fas"></i>
+      </span>
+					</div>
+					<p *ngIf="isSubmitted && !f.password.errors" class="help is-success">This password is
+						available</p>
+					<ng-container *ngIf="isSubmitted && f.password.errors">
+						<p *ngIf="f.password.errors.required" class="help is-danger">Password is required</p>
+					</ng-container>
+				</div>
+
+				<div class="field is-grouped">
+					<div class="control">
+						<button [disabled]="isLoading" class="button is-link">Login</button>
+					</div>
+				</div>
+
+				<article *ngIf="error" class="message is-danger">
+					<div class="message-body">
+						{{error}}
+					</div>
+				</article>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,19 @@
+<div ibmGrid class="demo-list">
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<form (keydown.enter)="enterHandler($event)" [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
+        <ibm-label>
+          User Name
+          <input ibmText formControlName="username">
+        </ibm-label>
+				<ibm-label>
+					Comments (Optional)
+					<textarea ibmTextArea formControlName="comment" placeholder="Please leave your Comments"
+            aria-label="textarea"></textarea>
+				</ibm-label>
+			</form>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>Prevent submit on Enter but allow Enter for newLine in TextArea [duplicate]</h4>
+		</div>
+	</div>

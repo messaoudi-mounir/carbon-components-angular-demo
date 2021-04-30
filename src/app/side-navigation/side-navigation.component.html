@@ -1,0 +1,17 @@
+
+  <ibm-sidenav (click)="onClickNavItem($event)">
+    <ibm-sidenav-item id="nav-home" [active]="currentNavId === 'nav-home'">
+      <svg icon ibmIconHome size="16"></svg>
+      Home
+    </ibm-sidenav-item>
+    <ibm-sidenav-menu title="Posts">
+      <ibm-sidenav-item id="nav-posts-art" [active]="currentNavId === 'nav-posts-art'">Art</ibm-sidenav-item>
+      <ibm-sidenav-item id="nav-posts-life" [active]="currentNavId === 'nav-posts-life'">Life</ibm-sidenav-item>
+      <ibm-sidenav-menu title="Tech">
+        <ibm-sidenav-item id="nav-posts-tech-angular" [active]="currentNavId === 'nav-posts-tech-angular'">Angular</ibm-sidenav-item>
+        <ibm-sidenav-item id="nav-posts-tech-react" [active]="currentNavId === 'nav-posts-tech-react'">React</ibm-sidenav-item>
+        <ibm-sidenav-item id="nav-posts-tech-vuejs" [active]="currentNavId === 'nav-posts-tech-vuejs'">Vue.js</ibm-sidenav-item>
+      </ibm-sidenav-menu>
+    </ibm-sidenav-menu>
+    <ibm-sidenav-item id="nav-omments" [active]="currentNavId === 'nav-omments'">Comments</ibm-sidenav-item>
+  </ibm-sidenav>

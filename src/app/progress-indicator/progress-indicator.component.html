@@ -1,0 +1,24 @@
+<div ibmGrid class="demo-list">
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+      <ibm-progress-indicator orientation="vertical" [steps]="steps" [current]="1"></ibm-progress-indicator>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>Vertical Progress Bar</h4>
+		</div>
+	</div>
+</div>
+<div ibmGrid class="demo-list">
+	<div ibmRow class="one-demo" style="padding-top:1rem;">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}" style="padding:0.5rem;background-color:rgb(237, 245, 255)">
+      <app-step-progress-bar [steps]="steps2" [current]="current" [narrowerView]="isNarrowerView"></app-step-progress-bar>&nbsp;
+      <button ibmButton="primary" (click)="previous()">Previous Step</button>&nbsp;
+      <button ibmButton="secondary" (click)="next()">Next Step</button>&nbsp;
+      <button ibmButton="tertiary" (click)="toggleLayout()">Toggle Layout</button>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>Nested Step Progress Bar</h4>
+		</div>
+	</div>
+</div>
+

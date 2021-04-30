@@ -1,0 +1,162 @@
+<div ibmGrid class="demo-list">
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<ibm-tabs cacheActive="true">
+				<ibm-tab heading="one" (selected)="adjustTilesHeight()">
+					<h4>Tab Content 1</h4>
+					<div class="bx--row">
+						<div class="bx--col">
+							<ibm-expandable-tile>
+								<span class="bx--tile-content__above-the-fold">
+            <ul>
+              <li>111</li>
+              <li>222</li>
+            </ul>
+          </span>
+								<span class="bx--tile-content__below-the-fold">
+            <ul>
+              <li>aaa</li>
+              <li>bbb</li>
+            </ul>
+          </span>
+							</ibm-expandable-tile>
+						</div>
+						<div class="bx--col">
+							<ibm-expandable-tile>
+								<span class="bx--tile-content__above-the-fold">
+            <ul>
+              <li>111</li>
+              <li>222</li>
+              <li>333</li>
+              <li>444</li>
+            </ul>
+          </span>
+								<span class="bx--tile-content__below-the-fold">
+            <ul>
+              <li>aaa</li>
+              <li>bbb</li>
+              <li>ccc</li>
+              <li>ddd</li>
+            </ul>
+          </span>
+							</ibm-expandable-tile>
+						</div>
+						<div class="bx--col">
+							<ibm-expandable-tile>
+								<span class="bx--tile-content__above-the-fold">
+            <ul>
+              <li>111</li>
+              <li>222</li>
+              <li>333</li>
+              <li>444</li>
+              <li>555</li>
+              <li>666</li>
+            </ul>
+          </span>
+								<span class="bx--tile-content__below-the-fold">
+            <ul>
+              <li>aaa</li>
+              <li>bbb</li>
+              <li>ccc</li>
+              <li>ddd</li>
+              <li>eee</li>
+              <li>fff</li>
+            </ul>
+          </span>
+							</ibm-expandable-tile>
+						</div>
+					</div>
+				</ibm-tab>
+				<ibm-tab heading="two" (selected)="adjustTilesHeight()">
+					<h4>Tab Content 2</h4>
+					<div class="bx--row">
+						<div class="bx--col">
+							<ibm-expandable-tile>
+								<span class="bx--tile-content__above-the-fold">
+            <ul>
+              <li>111</li>
+              <li>222</li>
+            </ul>
+          </span>
+								<span class="bx--tile-content__below-the-fold">
+            <ul>
+              <li>aaa</li>
+              <li>bbb</li>
+            </ul>
+          </span>
+							</ibm-expandable-tile>
+						</div>
+						<div class="bx--col">
+							<ibm-expandable-tile>
+								<span class="bx--tile-content__above-the-fold">
+            <ul>
+              <li>111</li>
+              <li>222</li>
+              <li>333</li>
+              <li>444</li>
+            </ul>
+          </span>
+								<span class="bx--tile-content__below-the-fold">
+            <ul>
+              <li>aaa</li>
+              <li>bbb</li>
+              <li>ccc</li>
+              <li>ddd</li>
+            </ul>
+          </span>
+							</ibm-expandable-tile>
+						</div>
+						<div class="bx--col">
+							<ibm-expandable-tile>
+								<span class="bx--tile-content__above-the-fold">
+            <ul>
+              <li>111</li>
+              <li>222</li>
+              <li>333</li>
+              <li>444</li>
+              <li>555</li>
+              <li>666</li>
+            </ul>
+          </span>
+								<span class="bx--tile-content__below-the-fold">
+            <ul>
+              <li>aaa</li>
+              <li>bbb</li>
+              <li>ccc</li>
+              <li>ddd</li>
+              <li>eee</li>
+              <li>fff</li>
+            </ul>
+          </span>
+							</ibm-expandable-tile>
+						</div>
+					</div>
+				</ibm-tab>
+				<ibm-tab heading="three">
+					<h4>Tab Content 3</h4>
+				</ibm-tab>
+			</ibm-tabs>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<h4>Adjust the Expandable Tiles Height Under Tabs Mannualy</h4>
+			<p>
+
+			</p>
+		</div>
+	</div>
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<ibm-tile-group [multiple]="false">
+				<ibm-selection-tile value="tile1" [selected]="true">Selectable Tile</ibm-selection-tile>
+				<ibm-selection-tile (click)="onClick($event)" value="tile2">Selectable Tile</ibm-selection-tile>
+				<ibm-selection-tile (click)="onClick($event)" value="tile3">Selectable Tile</ibm-selection-tile>
+			</ibm-tile-group>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<h4>Disable some tiles</h4>
+			<p>
+
+			</p>
+		</div>
+	</div>
+</div>

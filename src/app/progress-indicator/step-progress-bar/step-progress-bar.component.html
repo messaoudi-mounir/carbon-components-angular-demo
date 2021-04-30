@@ -1,0 +1,22 @@
+<ul *ngIf="steps.length" class="wrapper" [class.narrower]="narrowerView">
+	<li *ngFor="let step of steps" [ngClass]="{'menu': step.children}">
+		<ng-container [ngSwitch]="step.state">
+      <svg class="state-icon incomplete" *ngSwitchCase="'incomplete'" ibmIconRadioButton size="16"></svg>
+      <svg class="state-icon" *ngSwitchCase="'complete'" ibmIconCheckmarkOutline size="16"></svg>
+			<svg class="state-icon" *ngSwitchCase="'current'" ibmIconCircleFilled size="16"></svg>
+		</ng-container>
+		<span [ngClass]="{'menu-heading': step.children}" (click)="toggleMenu($event)">{{step.text}}</span>
+    <svg *ngIf="step.children" class="toggle-symbol expanded-status" ibmIconChevronUp size="16"></svg>
+    <svg *ngIf="step.children" class="toggle-symbol collapsed-status" ibmIconChevronDown size="16"></svg>
+		<ul *ngIf="step.children">
+			<li *ngFor="let step2 of step.children" [ngClass]="{'menu-item': step.children}">
+				<ng-container [ngSwitch]="step2.state">
+					<svg class="state-icon incomplete" *ngSwitchCase="'incomplete'" ibmIconRadioButton size="16"></svg>
+					<svg class="state-icon" *ngSwitchCase="'complete'" ibmIconCheckmarkOutline size="16"></svg>
+					<svg class="state-icon" *ngSwitchCase="'current'" ibmIconCircleFilled size="16"></svg>
+				</ng-container>
+				<span>{{step2.text}}</span>
+			</li>
+		</ul>
+	</li>
+</ul>

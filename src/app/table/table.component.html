@@ -1,0 +1,63 @@
+<div ibmGrid class="demo-list">
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<ibm-loading [overlay]="true" *ngIf="isLoading"></ibm-loading>
+			<ibm-table [model]="usersModel" size="sm" [striped]="false" (sort)="customSort($event)"
+				[showSelectionColumn]="true">
+				<tbody>
+					<tr>
+						<td class="no-data" colspan="5">
+							<div>No data found.</div>
+						</td>
+					</tr>
+				</tbody>
+			</ibm-table>
+			<ng-template #commentCellTmpl let-data="data"><!-- this template could not be placed in ngFor-->
+				<input ibmText [(ngModel)]="data.val" />
+      </ng-template>
+				<button ibmButton size="sm" (click)="getFirstComment()">Get comments in the selected rows</button>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<h4>Customized TD Structure</h4>
+		</div>
+	</div>
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<ibm-table [model]="jsSkillsModel" size="sm" [striped]="false" [showSelectionColumn]="false">
+				<tbody>
+					<tr>
+						<td class="no-data" colspan="5">
+							<div>No data found.</div>
+						</td>
+					</tr>
+				</tbody>
+			</ibm-table>
+			<ng-template #collapsedRowTmpl let-data="data">
+				<a [attr.href]="data.homepage">{{data.homepage}}</a>
+			</ng-template>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<h4>Striped Multiple Rows with Expandable Rows</h4>
+		</div>
+	</div>
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<ibm-table [model]="jsSkillsModel1" size="lg" [striped]="false" [showSelectionColumn]="false"
+				(rowClick)="onRowClick($event)">
+				<tbody>
+					<tr>
+						<td class="no-data" colspan="3">
+							<div>No data found.</div>
+						</td>
+					</tr>
+				</tbody>
+			</ibm-table>
+			<ng-template #actionCellTmpl>
+				<button class="delete-button" (click)="deleteAction()">Delete</button>
+			</ng-template>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<h4>Get row index when clicking cells in one row</h4>
+		</div>
+	</div>
+</div>

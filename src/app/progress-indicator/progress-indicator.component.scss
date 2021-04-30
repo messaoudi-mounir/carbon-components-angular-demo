@@ -1,0 +1,9 @@
+button {
+  width: 8rem;
+}
+
+:host ::ng-deep {
+  app-step-progress-bar .wrapper {
+    background-color: #fff;
+  }
+}

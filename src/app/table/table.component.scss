@@ -1,0 +1,15 @@
+:host ::ng-deep #multipleRowsStripedTable tbody td {
+  background-color: #fff;
+}
+
+:host ::ng-deep #multipleRowsStripedTable .highlighted-rows td {
+  background-color: red;
+}
+
+:host ::ng-deep #multipleRowsStripedTable .highlighted-rows + [ibmtableexpandedrow] td {
+  background-color: red;
+}
+
+.delete-button {
+  background-color: #fff;
+}

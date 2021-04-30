@@ -1,0 +1,17 @@
+<div ibmGrid class="demo-list">
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<fieldset class="bx--fieldset">
+				<legend class="bx--label">Favorite Skills</legend>
+				<ibm-checkbox *ngFor="let skill of skills.controls; let i=index"
+					[formControl]="skill">
+					{{skillData[i]}}
+				</ibm-checkbox>
+			</fieldset>
+      <p>checkbox value: {{ skills.value | json }}</p>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>with reactive form</h4>
+		</div>
+	</div>
+</div>

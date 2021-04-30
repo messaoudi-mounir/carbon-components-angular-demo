@@ -1,0 +1,118 @@
+.wrapper {
+  display: inline-block;
+  box-sizing: border-box;
+  width: max-content;
+  min-width: 240px;
+  list-style: none;
+  padding-left: 0;
+
+  &.narrower {
+    min-width: unset;
+    width: 3rem;
+
+    .state-icon ~ *:not(ul) {
+      display: none!important;
+    }
+
+    .menu > .state-icon {
+      left: 1rem;
+    }
+
+    > li:not(.menu) > .state-icon {
+      margin-left: 1rem;
+    }
+
+    ul {
+      padding-top: 2rem;
+      padding-left: 1.125rem;
+
+      .state-icon {
+        width: 0.75rem;
+        height: 0.75rem;
+      }
+    }
+
+    .menu.collapsed {
+      height: 2rem;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+
+    .state-icon {
+      fill: #0062FF;
+
+      &.incomplete {
+        fill: initial;
+      }
+    }
+
+    span {
+      font-size: 1rem;
+    }
+  }
+
+  .menu {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    > .collapsed-status {
+      display: none;
+    }
+
+    &.collapsed {
+      > ul, > .expanded-status {
+        display: none;
+      }
+      > .collapsed-status {
+        display: initial;
+      }
+    }
+
+    > .state-icon {
+      position: absolute;
+      left: 0.5rem;
+      top: 0.5rem;
+    }
+
+    // ~ li:not(.menu) > .state-icon {
+    //   margin-left: 0.5rem;
+    //   margin-right: 0.5rem;
+    // }
+
+    .menu-item > svg {
+      margin-right: 1rem;
+    }
+
+    .menu-heading {
+      display: inline-block;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0.5rem 1rem 0.5rem 2rem;
+
+      &:hover {
+        background-color: #eee;
+        cursor: pointer;
+      }
+    }
+
+    .toggle-symbol {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+  }
+
+  > :not(.menu) > .state-icon {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}

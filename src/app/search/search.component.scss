@@ -1,0 +1,23 @@
+
+:host ::ng-deep {
+
+  .bx--search {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .bx--label {
+      width: unset;
+      height: unset;
+      position: unset;
+      overflow: unset;
+      margin: 0 0 0.5rem 0;
+    }
+    .bx--search-magnifier {
+      top: calc(50% + 0.75rem);
+    }
+    .bx--search-close {
+      top: 1.5rem;
+    }
+  }
+
+}

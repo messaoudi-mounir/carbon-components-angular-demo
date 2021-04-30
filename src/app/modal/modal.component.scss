@@ -1,0 +1,11 @@
+#parent-modal .bx--modal-content {
+  min-height: 400px;
+}
+
+#child-modal .bx--modal-content {
+  min-height: 300px;
+}
+
+#grandchild-modal .bx--modal-content {
+  min-height: 200px;
+}

@@ -1,0 +1,58 @@
+<div ibmGrid class="demo-list">
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<fieldset class="bx--fieldset">
+				<legend class="bx--label">Gender</legend>
+				<ibm-radio-group aria-label="radiogroup" [formControl]="genders">
+					<ibm-radio *ngFor="let gender of genderData"
+						[value]="gender" [disabled]="genders.disabled"
+						[checked]="genders.value === gender">
+						{{gender}}
+					</ibm-radio>
+				</ibm-radio-group>
+				<div *ngIf="submitted && genders.invalid" class="invalid-feedback">
+					Required field.
+				</div>
+			</fieldset>
+      <button ibmButton (click)="toggleRadioState()">Toggle Radio State</button>
+			<p>Radio value: {{ genders.value | json }}</p>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>with reactive form</h4>
+		</div>
+	</div>
+  <div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<fieldset class="bx--fieldset">
+				<legend class="bx--label">Gender</legend>
+				<ibm-radio-group aria-label="radiogroup" [(ngModel)]="genderModel">
+					<ibm-radio *ngFor="let gender of genderData"
+						[value]="gender" >
+						{{gender}}
+					</ibm-radio>
+				</ibm-radio-group>
+			</fieldset>
+			<p>Radio value: {{ genderModel | json }}</p>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>(1) with ngModel</h4>
+		</div>
+	</div>
+  <div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<fieldset class="bx--fieldset">
+				<legend class="bx--label">Gender</legend>
+				<ibm-radio-group aria-label="radiogroup" [(ngModel)]="genderModel1">
+					<ibm-radio *ngFor="let gender of genderData1"
+						[value]="gender.val" >
+						{{gender.caption}}
+					</ibm-radio>
+				</ibm-radio-group>
+			</fieldset>
+			<p>Radio value: {{ genderModel1 | json }}</p>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>(21) with ngModel</h4>
+		</div>
+	</div>
+</div>

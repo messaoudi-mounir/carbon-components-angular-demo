@@ -1,0 +1,31 @@
+<div ibmGrid class="demo-list">
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<ibm-search style="display:inline-block;width:calc(100% - 3rem);vertical-align:bottom"
+				[(ngModel)]="skillModel" size="xl" label="JS Skills" placeholder="Please input your favorite js skill">
+			</ibm-search>
+			<button ibmButton="secondary" style="top:1.5rem;"  class="bx--btn--icon-only">
+            <svg icon ibmIconSearch size="16" class="bx--btn__icon"></svg>
+          </button>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<h4>Set search value with ngModel</h4>
+			<p>
+				Search component allows us to set value with ngModel.
+			</p>
+		</div>
+	</div>
+  <div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<ibm-search style="display:inline-block;width:calc(100% - 3rem);vertical-align:bottom" (search)="onSearch()"
+				[(ngModel)]="skillModel" size="xl" label="JS Skills" placeholder="Please input your favorite js skill">
+			</ibm-search>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 12}">
+			<h4>Set search value with ngModel</h4>
+			<p>
+				Search component allows us to set value with ngModel.
+			</p>
+		</div>
+	</div>
+</div>

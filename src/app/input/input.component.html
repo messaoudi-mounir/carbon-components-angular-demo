@@ -1,0 +1,17 @@
+<div ibmGrid class="demo-list">
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+      <form (keydown.enter)="enterHandler($event)" [formGroup]="orderForm">
+        <ibm-label [invalid]="submitted && f.userEmail.invalid"
+          [invalidText]="submitted && f.userEmail.errors?.required ? 'Email required' : 'Invalid email' ">
+          Email Address
+          <input ibmText id="originator-email-input" placeholder="Please input email address"
+            formControlName="userEmail">
+        </ibm-label>
+      </form>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>with reactive form</h4>
+		</div>
+	</div>
+</div>

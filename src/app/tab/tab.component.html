@@ -1,0 +1,20 @@
+<div ibmGrid class="demo-list">
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<form [formGroup]="appraisalForm">
+				<h4>Frontend Skills Self Appraisal</h4>
+				<ibm-tabs>
+					<ibm-tab [id]="skills[i] + '-tab'" [formGroup]="appraisal" [heading]="skills[i]"  *ngFor="let appraisal of appraisalForm.controls.appraisals.controls; let i=index">
+						<ibm-label>
+							Self Appraisal
+							<textarea ibmTextArea formControlName="comment" aria-label="textarea"></textarea>
+						</ibm-label>
+					</ibm-tab>
+				</ibm-tabs>
+			</form>
+      <p>checkbox value: {{ appraisalForm.value | json }}</p>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>Reactive Form with Tabs2</h4>
+		</div>
+	</div>

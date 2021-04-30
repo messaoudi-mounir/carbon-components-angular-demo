@@ -1,0 +1,42 @@
+<div ibmGrid class="demo-list">
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<ibm-select [(ngModel)]="startDayModel" label="Start Day">
+				<option value="-1" disabled hidden>Choose a day</option>
+				<option value="0">Sunday</option>
+				<option value="1">Monday</option>
+				<option value="2">Tuesday</option>
+				<option value="3">Wednesday</option>
+				<option value="4">Thursday</option>
+				<option value="5">Friday</option>
+				<option value="6">Saturday</option>
+			</ibm-select>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>with ngModel</h4>
+		</div>
+	</div>
+	<div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<ibm-select label="start day" [formControl]="startDay1" style="width:14rem;">
+				<option *ngFor="let day of dayData" [value]="day.value">{{day.name}}</option>
+			</ibm-select>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>with reactive form</h4>
+
+		</div>
+	</div>
+  <div ibmRow class="one-demo">
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<ibm-select label="start day" [formControl]="startDay2" >
+        <option value="">Please select a day</option>
+				<option *ngFor="let day of dayData2" [value]="day">{{day}}</option>
+			</ibm-select>
+		</div>
+		<div ibmCol [columnNumbers]="{'lg': 6, 'md': 4, 'sm': 4}">
+			<h4>with reactive form2</h4>
+
+		</div>
+	</div>
+</div>
